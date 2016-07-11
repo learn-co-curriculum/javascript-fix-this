@@ -38,7 +38,7 @@ sure that the function for the next step is being called with the
 correct context, and that the proper `updateFunction` is being called to
 update the status. You'll need to use `call` inside these functions to
 get the tests to pass. **Hint:** Remember that the `function` argument to `setTimeout` *also*
-needs to be bound to the proper context!
+needs to be bound to the proper context! Think abou using [arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) with your `setTimeout` calls.
 
 * Write your own code for the `makeDessert` function
 that will decide based on which link was clicked whether to `makePie` or
@@ -53,9 +53,6 @@ that will decide based on which link was clicked whether to `makePie` or
 Each step of the way, you should be using what you know about `call`,
 `bind`, and `apply` to make each function set the context for the next
 function.
-
-**Advanced:** If you get tired of manually binding context to every
-`setTimeout` function, you can try using an [*arrow function*](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) with your `setTimeout` calls. Arrow functions *lexically bind* `this`, meaning they pass on the `this` from their surrounding scope.Try it out, but make sure the tests still pass!
 
 ## Resources
 

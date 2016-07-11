@@ -129,10 +129,11 @@ describe('index', () => {
     })
 
     it('calls mix with context', () => {
+      var update = updateStatus.bind(document.getElementById("pie"))
       var spy = expect.spyOn(mix, "call").andCallThrough()
       var node = document.getElementById("pie")
       makePie.call(node)
-      expect(spy.calls[0].arguments[0]).toBe(pie)
+      expect(spy).toHaveBeenCalledWith(pie, update)
       spy.restore()
     })
   })
@@ -146,10 +147,11 @@ describe('index', () => {
       spy.restore()
     })
     it('calls mix with context', () => {
+      var update = updateStatus.bind(document.getElementById("cake"))
       var spy = expect.spyOn(mix, "call").andCallThrough()
       var node = document.getElementById("cake")
       makeCake.call(node)
-      expect(spy.calls[0].arguments[0]).toBe(cake)
+      expect(spy).toHaveBeenCalledWith(cake, update)
       spy.restore()
     })
   })
