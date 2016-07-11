@@ -8,9 +8,9 @@ var cake = {
   decorate: function(updateFunction) {
     var status = "Decorating with " + this.topping + ". Ready to eat soon!"
     updateFunction(status)
-    setTimeout(function() {
+    setTimeout(() => {
       updateFunction(serve.apply(this, ["Happy Eating!", this.customer]))
-    }.bind(this), 2000)
+    }, 2000)
   }
 }
 
@@ -42,25 +42,25 @@ function updateStatus(statusText) {
 
 function mix(updateFunction) {
   var status = "Mixing " + this.ingredients.join(", ")
-  setTimeout(function() {
+  setTimeout(() => {
     bake.call(this, updateFunction)
-  }.bind(this), 2000)
+  }, 2000)
   updateFunction(status)
 }
 
 function bake(updateFunction) {
   var status = "Baking at " + this.bakeTemp + " for " + this.bakeTime
-  setTimeout(function() {
+  setTimeout(() => {
     cool.call(this, updateFunction)
-  }.bind(this), 2000)
+  }, 2000)
   updateFunction(status)
 }
 
 function cool(updateFunction) {
   var status = "It has to cool! Hands off!"
-  setTimeout(function() {
+  setTimeout(() => {
     this.decorate(updateFunction)
-  }.bind(this), 2000)
+  }, 2000)
   updateFunction(status)
 }
 
